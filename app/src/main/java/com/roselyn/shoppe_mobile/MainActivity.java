@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         usernameEditText = (EditText) findViewById(R.id.username);
         passwordEditText = (EditText) findViewById(R.id.password);
-        Button signIn = (Button) findViewById(R.id.login);
-        TextView registerTextView = (TextView) findViewById(R.id.textRegister);
+        Button signIn = (Button) findViewById(R.id.register);
+        TextView registerTextView = (TextView) findViewById(R.id.textLogin);
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,8 +74,6 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 assert response.body() != null;
-                System.out.println("Token : " + response.body().getToken());
-
                 SharedPreferences preferences = context.getSharedPreferences("tokenPrefer", MODE_PRIVATE);
                 SharedPreferences.Editor preferencesEdit = preferences.edit();
                 preferencesEdit.putString("token", response.body().getToken());
@@ -89,21 +87,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NotNull Call<TokenResponse> call, @NotNull Throwable t) {
                 Toast.makeText(MainActivity.this, "Sorry wrong credential", Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    private void register(String firstName, String lastName, String username, String email, String password) {
-        Call<TokenResponse> call = authApi.registerUser(new RegisterRequest(firstName, lastName, username, email, password));
-        call.enqueue(new Callback<TokenResponse>() {
-            @Override
-            public void onResponse(@NotNull Call<TokenResponse> call, @NotNull Response<TokenResponse> response) {
-                System.out.println("Token : " + response.body().getToken());
-            }
-
-            @Override
-            public void onFailure(@NotNull Call<TokenResponse> call, @NotNull Throwable t) {
-                System.out.println("Error while login");
             }
         });
     }

@@ -1,8 +1,13 @@
 package com.roselyn.shoppe_mobile.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class CategoryResponse {
+    @SerializedName("id")
     private Integer id;
+    @SerializedName("categoryName")
     private String categoryName;
+    @SerializedName("user")
     private UserResponse user;
 
     public CategoryResponse(Integer id, String categoryName, UserResponse user) {

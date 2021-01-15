@@ -13,11 +13,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="24dp"
-        android:inputType="text"
-        android:hint="@string/prompt_username"
-        android:textColorHint="@color/gray"
         android:background="@drawable/input_field"
+        android:hint="@string/prompt_username"
+        android:inputType="text"
         android:selectAllOnFocus="true"
+        android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,19 +29,19 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:hint="@string/prompt_password"
         android:background="@drawable/input_field"
+        android:hint="@string/prompt_password"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:outlineProvider="none"
-        android:textColorHint="@color/gray"
         android:selectAllOnFocus="true"
+        android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/register"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -65,11 +65,11 @@
         android:textColor="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintTop_toBottomOf="@+id/register"
         app:layout_constraintVertical_bias="0.011" />
 
     <TextView
-        android:id="@+id/textRegister"
+        android:id="@+id/textLogin"
         android:layout_width="124dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -91,8 +91,8 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="169dp"
         android:text="@string/login"
-        android:textSize="30sp"
         android:textAllCaps="true"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

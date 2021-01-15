@@ -3,43 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_category">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.roselyn.shoppe_mobile.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_nav_home_to_nav_category_content"
-            app:destination="@id/nav_category_content" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.roselyn.shoppe_mobile.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.roselyn.shoppe_mobile.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
-        android:id="@+id/nav_category_content"
+        android:id="@+id/nav_category"
         android:name="com.roselyn.shoppe_mobile.ui.category.CategoryFragment"
         android:label="@string/menu_category"
         tools:layout="@layout/fragment_category">
         <action
-            android:id="@+id/action_nav_category_content_to_nav_home"
-            app:destination="@id/nav_home" />
+            android:id="@+id/to_nav_category_form"
+            app:destination="@id/nav_category_form" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_category_form"
         android:name="com.roselyn.shoppe_mobile.ui.category.CategoryFragmentForm"
         android:label="@string/menu_category"
-        tools:layout="@layout/fragment_category_form" />
+        tools:layout="@layout/fragment_category_form">
+        <action
+            android:id="@+id/to_nav_category_content"
+            app:destination="@id/nav_category" />
+    </fragment>
 </navigation>

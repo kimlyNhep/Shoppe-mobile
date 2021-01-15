@@ -31,4 +31,7 @@
     <string name="create_category">Create Category</string>
     <string name="action_create">Create</string>
     <string name="new_item">New</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="menu_logout">Log out</string>
 </resources>
